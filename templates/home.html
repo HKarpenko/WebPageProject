@@ -46,6 +46,7 @@
         animation: fadeImg 1s ease-in-out forwards;
         animation-delay: 0.5s;
     }
+
     @keyframes fadeImg {
       0% {
         opacity: 0;
@@ -53,16 +54,6 @@
       100% {
         opacity: 1;
       }
-    }
-
-    .slide {
-      position: absolute;
-      top: -2000px;
-      animation: slide 0.7s forwards;
-    }
-
-    @keyframes slide {
-        100% { top: 0; }
     }
 
     .masthead {
@@ -77,7 +68,8 @@
       background-attachment: scroll;
       background-size: cover;
     }
-    .masthead h1 {
+
+    .h1-grad {
       font-size: 3rem;
       line-height: 3rem;
       letter-spacing: 0.8rem;
@@ -92,9 +84,9 @@
         height: 100vh;
         padding: 0;
       }
-      .masthead h1 {
-        font-size: 4rem;
-        line-height: 4rem;
+      .h1-grad {
+        font-size: 5rem;
+        line-height: 5rem;
         letter-spacing: 0.8rem;
       }
     }
@@ -106,7 +98,11 @@
     }
 
     body {
-      background: rgb(200, 200, 200)
+      background: rgb(22,22,22)
+    }
+
+    .about-gradient {
+      background: linear-gradient(to top, rgba(22,22,22, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%);
     }
 
     .navbar-custom {
@@ -114,10 +110,6 @@
     }
 
     .fade-500 {
-      opacity: 1;
-    }
-
-    .fade-700 {
       opacity: 1;
     }
 
@@ -143,9 +135,9 @@
       height: 7vh;
       font-size : 18px;
       border-radius: 8px;
-      border-color: #424242;
+      border-color: #9E9E9E;
       transition: transform .5s;
-      background: rgba(0,0,0,0);
+      background: rgba(88,88,88,0.2);
       color: #616161;
     }
 
@@ -165,11 +157,7 @@
       color: #828282;
     }
 
-    .about-gradient {
-      background: linear-gradient(to top, rgba(200, 200, 200, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%);
-    }
-
-    @media (min-width: 767px) {
+    @media (min-width: 992px) {
       .zoom {
         transition: transform .5s; /* Animation */
       }
@@ -182,7 +170,7 @@
     .card{
       width: 100%;
       height: 450px;
-      background: #9E9E9E;
+      background: rgb(40,40,40);
       border-radius: 4px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
@@ -193,7 +181,7 @@
       width: 100%;
       height: 450px;
       border-radius: 4px;
-      background: #9E9E9E;
+      background:  rgb(33,33,33);
       transition: 0.5s;
       z-index:-1;
     }
@@ -242,8 +230,23 @@
      padding: 0;
      font-weight: 600;
      font-size: 20px;
-     color: #777;
+     color: #BDBDBD;
      text-transform: uppercase;
+    }
+
+    .card-new{
+      background: rgb(40,40,40);
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .fa-bott{
+      text-decoration: none;
+      color: #BDBDBD;
+    }
+
+    .fa-bott:hover{
+      color: #757575;
     }
 
   </style>
@@ -277,13 +280,13 @@
 
             <ul class="navbar-nav ml-5">
               <li class="nav-item h4 mt-2 mx-1">
-                <a class="nav-link waves-effect waves-light">
+                <a class="nav-link waves-effect waves-light" href="https://www.instagram.com/veronique_tattoo/">
                   <i class="fab fa-instagram"></i>
                 </a>
               </li>
 
               <li class="nav-item h4 mt-2 mx-1">
-                <a class="nav-link waves-effect waves-light">
+                <a class="nav-link waves-effect waves-light" href="https://www.facebook.com/VeroniqueTattoo">
                   <i class="fab fa-facebook"></i>
                 </a>
               </li>
@@ -300,7 +303,7 @@
 
       <div class="mx-auto text-center">
 
-        <h1 class="mx-auto my-0 text-uppercase">Tattoo Veronique</h1>
+        <h1 class="h1-grad mx-auto my-0 text-uppercase">Tattoo Veronique</h1>
 
         <div style="text-align: center; margin-top:15vh;">
           <button type="button" class="btn-main">Złożyć zamówienie</button>
@@ -324,13 +327,13 @@
             <div class="project-text w-100 my-auto">
               <!-- About: IMG -->
               <div class="text-center text-lg-left">
-                <h1 style="color: #121212">Veronika Karpenko</h1>
-                <p style="color: #212121">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                <h1 class = "h1-grad" style="font-size: 2.5rem; color: #E0E0E0;">Veronika Karpenko</h1>
+                <p style="color: #BDBDBD;">An example of where you can put an image of a project, or anything else, along with a description.</p>
                 <hr class="d-none d-lg-block mb-3 ml-0" />
               </div>
               <!-- About: More Button -->
               <div class="d-flex flex-row-reverse h-100">
-                <button type="button" class="btn btn-dark" style="width:22vh;height:9vh">Więcej</button>
+                <button type="button" class="btn-mini" style="color:#BDBDBD; width:22vh; height:9vh">Więcej</button>
               </div>
 
             </div>
@@ -341,13 +344,13 @@
 
   </section>
 
-  <section class="container" style="margin-top: 20vh;">
+  <section class="container" style="margin-top: 15vh;">
     <div class="row fade-500 justify-content-center text-center mb-5" >
-      <h1>Usługi</h1>
-      <hr style="width:50%">
+      <h1 style="color:#E0E0E0;">Usługi</h1>
+      <hr style="color:#E0E0E0; width:50%">
     </div>
 
-    <div class="row">
+    <div class="row fade-500">
       <div class="col-lg-3 mb-5 my-lg-2 mr-4">
         <div class="card">
 
@@ -358,14 +361,14 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Cienkie tatuaże</h2>
             <div class="d-flex flex-row-reverse h-100">
-              <button type="button" class="btn-mini">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
 
         </div>
       </div>
 
-      <div class="col-lg-3 my-5 my-lg-2 mr-4">
+      <div class="col-lg-3 mb-5 my-lg-2 mr-4">
         <div class="card">
           <div class="imgBx">
             <img src="../static/img/galery/tattooEyebrows.jpg" alt="images">
@@ -373,13 +376,13 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Micro pigmentacija</h2>
             <div class="d-flex flex-row-reverse h-100">
-              <button type="button" class="btn-mini">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 my-5 my-lg-2 mr-4">
+      <div class="col-lg-3 mb-5 my-lg-2 mr-4">
         <div class="card">
           <div class="imgBx">
             <img src="../static/img/galery/tattooDot.jpg" alt="images">
@@ -387,13 +390,13 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Dotwork</h2>
             <div class="d-flex flex-row-reverse h-100">
-              <button type="button" class="btn-mini">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 mt-5 my-lg-2 mr-4">
+      <div class="col-lg-3 my-lg-2 mr-4">
         <div class="card">
           <div class="imgBx">
             <img src="../static/img/galery/eskiz.jpg" alt="images">
@@ -401,7 +404,7 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Indywidualne szkice</h2>
             <div class="d-flex flex-row-reverse h-100">
-              <button type="button" class="btn-mini">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
         </div>
@@ -410,55 +413,24 @@
 
   </section>
 
-  <section class="container-fluid" style="margin-top: 20vh;">
+  <section class="container" style="margin-top: 15vh;">
 
     <div class="row fade-500 justify-content-center text-center mb-5" >
-      <h1>Portfolio</h1>
-      <hr style="width:50%">
-    </div>
-
-    <div class="row justify-content-center mb-lg-0 fade-500">
-      <!-- 1 IMG -->
-      <div class="col-lg-3 my-2 mr-4 zoom">
-        <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
-      </div>
-      <!-- 2 IMG -->
-      <div class="col-lg-3 my-2 mx-4 zoom">
-        <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
-      </div>
-      <!-- 3 IMG -->
-      <div class="col-lg-3 my-2 ml-4 zoom">
-        <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
-      </div>
-
-    </div>
-
-    <div class="row justify-content-center mt-5 mb-lg-0 fade-500">
-      <!-- 4 IMG -->
-      <div class="col-lg-3 my-2 mr-4 zoom">
-        <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
-      </div>
-      <!-- 5 IMG -->
-      <div class="col-lg-3 my-2 mx-4 zoom">
-        <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
-      </div>
-      <!-- 6 IMG -->
-      <div class="col-lg-3 my-2 ml-4 zoom">
-        <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
-      </div>
+      <h1 style="color:#E0E0E0;">Portfolio</h1>
+      <hr style="color:#E0E0E0; width:50%">
     </div>
 
     <div class="row justify-content-center mt-5 mb-lg-0 fade-500">
       <!-- 7 IMG -->
-      <div class="col-lg-3 my-2 mr-4 zoom">
+      <div class="col-lg-4 mb-5 my-lg-2 zoom">
         <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
       </div>
       <!-- 8 IMG -->
-      <div class="col-lg-3 my-2 mx-4 zoom">
+      <div class="col-lg-4 my-5 my-lg-2 zoom">
         <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
       </div>
       <!-- ... Button -->
-      <div class="col-lg-3 my-2 ml-4 zoom">
+      <div class="col-lg-4 mt-5 my-lg-2 zoom">
         <button type="button" class="btn-gallery">...</button>
       </div>
 
@@ -466,42 +438,58 @@
 
   </section>
 
+  <section class="container" style="margin-top: 15vh;">
 
+    <div class="row fade-500 justify-content-center text-center mb-5" >
+      <h1 style="color:#E0E0E0;">Salon</h1>
+      <hr style="color:#E0E0E0; width:50%">
+    </div>
+    <div class="card-new fade-500 mb-3" >
+      <div class="row text-center">
+        <div class="col-lg-5 col-xs-12 my-lg-2">
+          <img src="../static/img/tattooSalon.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-lg-7 col-xs-12">
+          <div class="card-body ">
+            <h2 class="card-title" style="color:#E0E0E0;">Studio Tatuażu</h2>
+            <p class="card-text" style="color: #BDBDBD;"> Studio tatuażu Tattoo to miejsce, w którym kreatywność łączy się z solidnością. Nasze tatuaże cechują trwałość i niepowtarzalność. W nowoczesnym lokalu o powierzchni 100m2 przy ulicy Kiełbaśniczej 7a we Wrocławiu oferujemy szeroką gamę technik i stylów – od tatuażu tradycyjnego i japońskiego, przez kolorowe ilustracje i komiks, na lineworku, dotworku i tatuażach konturowych kończąc. W naszym salonie tatuażu dbamy o najwyższą jakość naszych usług oraz higienę pracy.</p>
+            <div class="d-flex flex-row-reverse h-100">
+              <button type="button"  class="btn-mini mt-3" style="color:#BDBDBD; width:22vh; height:9vh"
+                onclick="location.href='https://www.google.com/maps/place/Barber+Shop+N1.by+Vlad+Shalaiev/@51.1189303,17.0760692,15z/data=!4m5!3m4!1s0x0:0x2ddc820f80949bd!8m2!3d51.1189303!4d17.0760692';">
+                Zobać na mapie
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </section>
 
     <!-- Footer -->
-  <footer>
-    <div class="сontainer bottom bg-dark p-5">
-      <div class="row justify-content-center">
+  <footer class="mt-5">
+    <div class="сontainer bottom" style="height:15rem; background:rgb(13,13,13)">
+      <div class="row align-items-center justify-content-center text-center">
 
-        <div class="col-lg-1 col-md-2 col-sm-4 h4 mx-4 my-2">
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        <div class="col-md-3 col-sm-12 col-sm-4 mx-4">
+          <a class="mx-3 fa-bott" href="https://www.instagram.com/veronique_tattoo/">
+            <i class="fab fa-instagram fa-3x"></i>
+          </a>
+
+          <a class="mx-3 fa-bott" href="https://www.facebook.com/VeroniqueTattoo">
+            <i class="fab fa-facebook fa-3x"></i>
           </a>
         </div>
 
-        <div class="col-lg-1 col-md-2 col-sm-4 h4 mx-4 my-2">
-          <a class="tw-ic">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+        <div class="col-md-3 col-sm-12 col-sm-4 h4 mx-4">
+          <a class="fb fa-lg text-light" style="text-decoration: none;" href="#">Veronique</a>
         </div>
 
-        <div class="col-lg-1 col-md-2 col-sm-4 h4 mx-4 my-2">
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-        </div>
-
-        <div class="col-lg-1 col-md-2 col-sm-4 h4 mx-4 my-2">
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-        </div>
-
-        <div class="col-lg-1 col-md-2 col-sm-4 h4 mx-4 mt-2">
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+        <div class="col-md-3 col-sm-12 h4 mx-4 mt-4" style="color: #BDBDBD;">
+          <p>al. Kochanowskiego 22B</p>
+          <p>51-602 Wrocław</p>
+          <p>tel: 318 191 251</p>
+          <p>tel: 22 422 05 36</p>
         </div>
 
       </div>
