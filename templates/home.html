@@ -56,6 +56,7 @@
       }
     }
 
+
     .masthead {
       position: relative;
       width: 100%;
@@ -79,12 +80,32 @@
               background-clip: text;
     }
 
+    .h1-grad-about {
+      font-size: 3.5rem;
+      color: #E0E0E0;
+      line-height: 3.5rem;
+      letter-spacing: 0.8rem;
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2));
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+              background-clip: text;
+    }
+
+    .p-about{
+      color: #BDBDBD;
+    }
+
     @media (min-width: 992px) {
       .masthead {
         height: 100vh;
         padding: 0;
       }
       .h1-grad {
+        font-size: 5rem;
+        line-height: 5rem;
+        letter-spacing: 0.8rem;
+      }
+      .h1-grad-about {
         font-size: 5rem;
         line-height: 5rem;
         letter-spacing: 0.8rem;
@@ -147,6 +168,23 @@
       color: #BDBDBD;
     }
 
+    .btn-mini-about{
+      width:22vh;
+      height:9vh;
+      font-size : 18px;
+      border-radius: 8px;
+      border-color: #9E9E9E;
+      transition: transform .5s;
+      background: rgba(88,88,88,0.2);
+      color:#BDBDBD;
+    }
+
+    .btn-mini-about:hover {
+      background: rgba(33,33,33,0.3);
+      transform: scale(1.2);
+      color: #BDBDBD;
+    }
+
     .btn-gallery {
       width: 100%;
       height: 100%;
@@ -157,16 +195,6 @@
       color: #828282;
     }
 
-    @media (min-width: 992px) {
-      .zoom {
-        transition: transform .5s; /* Animation */
-      }
-
-      .zoom:hover {
-        transform: scale(1.3);
-      }
-    }
-
     .card{
       width: 100%;
       height: 450px;
@@ -174,25 +202,37 @@
       border-radius: 4px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
-    .card:before,
-    .card:after {
-      content:"";
-      position: absolute;
-      width: 100%;
-      height: 450px;
-      border-radius: 4px;
-      background:  rgb(33,33,33);
-      transition: 0.5s;
-      z-index:-1;
+
+    @media (min-width: 1025px) {
+      .zoom {
+        transition: transform .5s; /* Animation */
+      }
+
+      .zoom:hover {
+        transform: scale(1.3);
+      }
+
+      .card:before,
+      .card:after {
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 450px;
+        border-radius: 4px;
+        background:  rgb(33,33,33);
+        transition: 0.5s;
+        z-index:-1;
+      }
+      .card:hover:before{
+        transform: rotate(10deg);
+        box-shadow: 0 2px 20px rgba(0,0,0,.2);
+      }
+      .card:hover:after{
+        transform: rotate(5deg);
+        box-shadow: 0 2px 20px rgba(0,0,0,.2);
+      }
     }
-    .card:hover:before{
-      transform: rotate(10deg);
-      box-shadow: 0 2px 20px rgba(0,0,0,.2);
-    }
-    .card:hover:after{
-      transform: rotate(5deg);
-      box-shadow: 0 2px 20px rgba(0,0,0,.2);
-    }
+
     .card .imgBx{
       position: absolute;
       top: 10px;
@@ -220,8 +260,8 @@
       position: absolute;
       left: 10px;
       right: 10px;
-      bottom: 10px;
-      height: 90px;
+      bottom: 90px;
+      height: 10px;
       text-align: center;
     }
 
@@ -249,17 +289,123 @@
       color: #757575;
     }
 
+    .header {
+      color:#E0E0E0;
+      font-size: 10vh;
+    }
+
+    section {
+      margin-top:15vh;
+    }
+
+    @media (max-width: 1024px) {
+      .navbar-brand {
+        font-size:40px;
+      }
+      .nav-link {
+        font-size:40px;
+      }
+      .btn-main {
+        width:35vh;
+        font-size:35px;
+      }
+      .btn-mini-about{
+        width:15vh;
+        height:7vh;
+        font-size:30px;
+      }
+      .btn-mini{
+        width:10vh;
+        height:5vh;
+        font-size:30px;
+      }
+      .p-about{
+        font-size:30px;
+      }
+      .header {
+        font-size: 5rem;
+      }
+      section {
+        margin-top:8vh;
+      }
+      .card{
+        height: 800px;
+      }
+      .card:hover .imgBx{
+        bottom: 180px;
+      }
+      .card .details{
+        bottom: 170px;
+      }
+      .card .details h2{
+       font-size: 35px;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size:30px;
+      }
+      .p-about{
+        font-size:23px;
+      }
+      .nav-link {
+        font-size:30px;
+      }
+      .btn-main {
+        font-size:1.4rem;
+      }
+      .btn-mini-about{
+        font-size:24px;
+        height:5rem;
+      }
+      .btn-mini{
+        font-size:24px;
+        height:3.5rem;
+        width:8rem;
+      }
+      .header {
+        font-size: 6vh;
+      }
+      section {
+        margin-top:8vh;
+      }
+      .card{
+        height: 700px;
+      }
+      .card:hover .imgBx{
+        bottom: 140px;
+      }
+      .card .details{
+        bottom: 130px;
+      }
+      .card .details h2{
+       font-size: 40px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .btn-main {
+        font-size: 3vh;
+      }
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
   </style>
 
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-custom fixed-top navbar-expand-md navbar-dark p-md-1 p-xs-5">
+    <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-dark py-4 py-xl-1">
       <div class="container-fluid">
           <a class="navbar-brand" href="#">Veronique</a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarLinksLeft,#NavbarLinksRight">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" style="width:70px;height:70px;"></span>
           </button>
 
           <div class="collapse navbar-collapse justify-content-end" id="NavbarLinksRight">
@@ -298,8 +444,8 @@
 
   </header>
 
-  <header class="masthead fade-once-1">
-    <div class="container d-flex h-100 align-items-center">
+  <header class="container-fluid masthead fade-once-1">
+    <div class="d-flex h-100 align-items-center">
 
       <div class="mx-auto text-center">
 
@@ -314,26 +460,26 @@
     </div>
   </header>
 
-  <section class="container-fluid fade-once-1 about-gradient">
+  <section class="container-fluid fade-once-1 about-gradient" style="margin-top:0px;">
 
       <div class="row justify-content-center mx-5 mb-lg-0">
 
-        <div class="col-lg-5 my-2 fade-500">
-          <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" />
+        <div class="col-xl-5 my-2 fade-500">
+          <img class="img-fluid img-about" src="../static/img/Veronika.jpg" alt="" />
         </div>
 
-        <div class="col-lg-6 fade-500">
+        <div class="col-xl-6 fade-500">
           <div class="d-flex flex-row h-100">
             <div class="project-text w-100 my-auto">
-              <!-- About: IMG -->
+              <!-- About: Text -->
               <div class="text-center text-lg-left">
-                <h1 class = "h1-grad" style="font-size: 2.5rem; color: #E0E0E0;">Veronika Karpenko</h1>
-                <p style="color: #BDBDBD;">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                <h1 class = "h1-grad-about" >Veronika Karpenko</h1>
+                <p class="p-about">An example of where you can put an image of a project, or anything else, along with a description.</p>
                 <hr class="d-none d-lg-block mb-3 ml-0" />
               </div>
               <!-- About: More Button -->
               <div class="d-flex flex-row-reverse h-100">
-                <button type="button" class="btn-mini" style="color:#BDBDBD; width:22vh; height:9vh">Więcej</button>
+                <button type="button" class="btn-mini-about">Więcej</button>
               </div>
 
             </div>
@@ -344,14 +490,14 @@
 
   </section>
 
-  <section class="container" style="margin-top: 15vh;">
+  <section class="container">
     <div class="row fade-500 justify-content-center text-center mb-5" >
-      <h1 style="color:#E0E0E0;">Usługi</h1>
+      <h1 class="header">Usługi</h1>
       <hr style="color:#E0E0E0; width:50%">
     </div>
 
     <div class="row fade-500">
-      <div class="col-lg-3 mb-5 my-lg-2 mr-4">
+      <div class="col-xl-3 col-lg-6 mb-5 my-xl-2 mr-4">
         <div class="card">
 
           <div class="imgBx">
@@ -360,7 +506,7 @@
 
           <div class="details">
             <h2 style="margin-bottom:2vh;">Cienkie tatuaże</h2>
-            <div class="d-flex flex-row-reverse h-100">
+            <div class="d-flex flex-row-reverse">
               <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
@@ -368,42 +514,42 @@
         </div>
       </div>
 
-      <div class="col-lg-3 mb-5 my-lg-2 mr-4">
+      <div class="col-xl-3 col-lg-6 mb-5 my-xl-2 mr-4">
         <div class="card">
           <div class="imgBx">
             <img src="../static/img/galery/tattooEyebrows.jpg" alt="images">
           </div>
           <div class="details">
             <h2 style="margin-bottom:2vh;">Micro pigmentacija</h2>
-            <div class="d-flex flex-row-reverse h-100">
+            <div class="d-flex flex-row-reverse">
               <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 mb-5 my-lg-2 mr-4">
+      <div class="col-xl-3 col-lg-6 mb-5 my-xl-2 mr-4">
         <div class="card">
           <div class="imgBx">
             <img src="../static/img/galery/tattooDot.jpg" alt="images">
           </div>
           <div class="details">
             <h2 style="margin-bottom:2vh;">Dotwork</h2>
-            <div class="d-flex flex-row-reverse h-100">
+            <div class="d-flex flex-row-reverse">
               <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 my-lg-2 mr-4">
+      <div class="col-xl-3 col-lg-6 my-xl-2 mr-4">
         <div class="card">
           <div class="imgBx">
             <img src="../static/img/galery/eskiz.jpg" alt="images">
           </div>
           <div class="details">
             <h2 style="margin-bottom:2vh;">Indywidualne szkice</h2>
-            <div class="d-flex flex-row-reverse h-100">
+            <div class="d-flex flex-row-reverse">
               <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
             </div>
           </div>
@@ -413,24 +559,24 @@
 
   </section>
 
-  <section class="container" style="margin-top: 15vh;">
+  <section class="container">
 
     <div class="row fade-500 justify-content-center text-center mb-5" >
-      <h1 style="color:#E0E0E0;">Portfolio</h1>
+      <h1 class="header">Portfolio</h1>
       <hr style="color:#E0E0E0; width:50%">
     </div>
 
     <div class="row justify-content-center mt-5 mb-lg-0 fade-500">
       <!-- 7 IMG -->
-      <div class="col-lg-4 mb-5 my-lg-2 zoom">
+      <div class="col-xl-4 mb-5 my-xl-2 zoom">
         <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
       </div>
       <!-- 8 IMG -->
-      <div class="col-lg-4 my-5 my-lg-2 zoom">
+      <div class="col-xl-4 my-5 my-xl-2 zoom">
         <img class="img-fluid" src="../static/img/Veronika.jpg" alt="" style="border-radius: 8px;"/>
       </div>
       <!-- ... Button -->
-      <div class="col-lg-4 mt-5 my-lg-2 zoom">
+      <div class="col-xl-4 mt-5 my-xl-2 zoom">
         <button type="button" class="btn-gallery">...</button>
       </div>
 
@@ -438,23 +584,24 @@
 
   </section>
 
-  <section class="container" style="margin-top: 15vh;">
+  <section class="container">
 
     <div class="row fade-500 justify-content-center text-center mb-5" >
-      <h1 style="color:#E0E0E0;">Salon</h1>
+      <h1 class="header">Salon</h1>
       <hr style="color:#E0E0E0; width:50%">
     </div>
+
     <div class="card-new fade-500 mb-3" >
       <div class="row text-center">
-        <div class="col-lg-5 col-xs-12 my-lg-2">
+        <div class="col-xl-5 col-md-12 my-xl-2">
           <img src="../static/img/tattooSalon.jpg" class="card-img" alt="...">
         </div>
-        <div class="col-lg-7 col-xs-12">
+        <div class="col-xl-7 col-md-12">
           <div class="card-body ">
             <h2 class="card-title" style="color:#E0E0E0;">Studio Tatuażu</h2>
-            <p class="card-text" style="color: #BDBDBD;"> Studio tatuażu Tattoo to miejsce, w którym kreatywność łączy się z solidnością. Nasze tatuaże cechują trwałość i niepowtarzalność. W nowoczesnym lokalu o powierzchni 100m2 przy ulicy Kiełbaśniczej 7a we Wrocławiu oferujemy szeroką gamę technik i stylów – od tatuażu tradycyjnego i japońskiego, przez kolorowe ilustracje i komiks, na lineworku, dotworku i tatuażach konturowych kończąc. W naszym salonie tatuażu dbamy o najwyższą jakość naszych usług oraz higienę pracy.</p>
+            <p class="p-about card-text" style="color: #BDBDBD;"> Studio tatuażu Tattoo to miejsce, w którym kreatywność łączy się z solidnością. Nasze tatuaże cechują trwałość i niepowtarzalność. W nowoczesnym lokalu o powierzchni 100m2 przy ulicy Kiełbaśniczej 7a we Wrocławiu oferujemy szeroką gamę technik i stylów – od tatuażu tradycyjnego i japońskiego, przez kolorowe ilustracje i komiks, na lineworku, dotworku i tatuażach konturowych kończąc. W naszym salonie tatuażu dbamy o najwyższą jakość naszych usług oraz higienę pracy.</p>
             <div class="d-flex flex-row-reverse h-100">
-              <button type="button"  class="btn-mini mt-3" style="color:#BDBDBD; width:22vh; height:9vh"
+              <button type="button"  class="btn-mini-about mt-3" style="width:15rem;"
                 onclick="location.href='https://www.google.com/maps/place/Barber+Shop+N1.by+Vlad+Shalaiev/@51.1189303,17.0760692,15z/data=!4m5!3m4!1s0x0:0x2ddc820f80949bd!8m2!3d51.1189303!4d17.0760692';">
                 Zobać na mapie
               </button>
@@ -468,10 +615,10 @@
 
     <!-- Footer -->
   <footer class="mt-5">
-    <div class="сontainer bottom" style="height:15rem; background:rgb(13,13,13)">
+    <div class="сontainer bottom" style="background:rgb(13,13,13)">
       <div class="row align-items-center justify-content-center text-center">
 
-        <div class="col-md-3 col-sm-12 col-sm-4 mx-4">
+        <div class="col-md-3 col-sm-12 col-sm-4 mx-4 my-4">
           <a class="mx-3 fa-bott" href="https://www.instagram.com/veronique_tattoo/">
             <i class="fab fa-instagram fa-3x"></i>
           </a>
