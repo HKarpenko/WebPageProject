@@ -11,6 +11,9 @@ def hello():
 def start():
     return render_template("start.html")
 
+@app.route('/order')
+def order():
+    return render_template("order.html")
 
 @app.route('/login', methods=["GET","POST"])
 def login():
