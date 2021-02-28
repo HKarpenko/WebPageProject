@@ -202,52 +202,7 @@
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
-  }
-
-
-  @media (max-width: 768px) {
-    .navbar-brand {
-      font-size:30px;
-    }
-    .h1-grad{
-      font-size: 3rem;
-      line-height: 3rem;
-    }
-    .header {
-      color:#E0E0E0;
-      font-size: 7vh;
-    }
-
-    .btn-upload {
-      width: 20vh;
-      height: 4rem;
-      font-size: 1.5rem;
-    }
-
-    .btn-send{
-      width:30vh;
-      font-size: 3rem;
-    }
-
-    input {
-      height: 7rem;
-    }
-    textarea {
-      height: 15rem;
-    }
-
-    .label-info{
-      font-size:1.5rem;
-    }
-
-    input:focus ~ label, textarea:focus ~ label,
-    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
-      font-size: 1rem;
-    }
-
-    .form-control {
-      font-size: 1rem;
-    }
+    visibility:hidden;
   }
 
   @media (max-width: 1024px) {
@@ -303,6 +258,58 @@
 
     .form-control {
       height: 6rem;
+      font-size: 1rem;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size:30px;
+    }
+    .h1-grad{
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+    .header {
+      color:#E0E0E0;
+      font-size: 7vh;
+    }
+
+    .fileUpload{
+      width: 20vh;
+      height: 4rem;
+    }
+
+    .btn-upload {
+      width: 22vh;
+      height: 4rem;
+      font-size: 1.4rem;
+    }
+
+    .btn-send{
+      width:22vh;
+      font-size: 1.8rem;
+    }
+
+    input {
+      height: 7rem;
+    }
+    textarea {
+      height: 15rem;
+    }
+
+    .label-info{
+      font-size:1.5rem;
+    }
+
+    input:focus ~ label, textarea:focus ~ label,
+    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
+      font-size: 1rem;
+    }
+
+    .form-control {
+      height:4rem;
       font-size: 1rem;
     }
   }
@@ -429,10 +436,10 @@
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" readonly>
-            <span class="fileUpload mx-3">
-              <label for="up" class="btn-upload">Dodaj plik</label>
-              <input type="file" class="upload up" id="up" style="visibility:hidden;" multiple/>
-            </span>
+          <span class="fileUpload mx-3">
+            <label for="up" class="btn-upload">Dodaj plik</label>
+            <input type="file" class="upload up" id="up" multiple/>
+          </span>
         </div><!-- group -->
 
         <div class="text-center">

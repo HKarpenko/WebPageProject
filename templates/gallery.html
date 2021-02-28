@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
     <script type="text/javascript" src="../static/js/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
@@ -106,96 +109,6 @@
       background-color: rgba(0,0,0,0.5);
     }
 
-    input:focus ~ label, textarea:focus ~ label,
-    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
-        font-size: 0.75em;
-        top: -5px;
-        -webkit-transition: all 0.225s ease;
-        transition: all 0.225s ease;
-    }
-
-    .styled-input {
-        position: relative;
-    }
-
-    .styled-input label {
-        color: #E0E0E0;
-        padding: 1.3rem 30px 1rem 30px;
-        position: absolute;
-        top: 10px;
-        left: 0;
-        -webkit-transition: all 0.25s ease;
-        transition: all 0.25s ease;
-        pointer-events: none;
-    }
-
-    input,
-    textarea {
-        padding: 30px;
-        height: 5rem;
-        border: 0;
-        width: 100%;
-        font-size: 1.5rem;
-        background: rgb(40,40,40);
-        border-radius: 4px;
-        color:#BDBDBD;
-    }
-
-    textarea {
-      height: 15rem;
-    }
-
-    .btn-send{
-      width: 35vh;
-      height: 10vh;
-      font-size : 2rem;
-      border-radius: 8px;
-      border-color: #9E9E9E;
-      transition: transform .5s;
-      background: rgba(0,0,0,0);
-      color: #828282;
-    }
-
-    .btn-send:hover {
-      background: rgba(33,33,33,0.7);
-      transform: scale(1.2);
-      color: #BDBDBD;
-    }
-
-    .btn-upload {
-      width: 30vh;
-      height: 4rem;
-      border: 2px solid gray;
-      color: #828282;
-      background: rgba(0,0,0,0);
-      padding: 8px 20px;
-      border-radius: 8px;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .btn-upload:hover {
-      background: rgba(33,33,33,0.7);
-      color: #BDBDBD;
-    }
-
-    .form-control {
-      height: 4rem;
-      font-family: "Roboto", sans-serif;
-      font-size: 1.5rem;
-      color:#BDBDBD;
-      background-color:  rgb(40,40,40)!important;
-      border: none;
-      margin-right: 1rem;
-    }
-
-    .fileUpload input.upload {
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      filter: alpha(opacity=0);
-    }
-
     @media (max-width: 768px) {
       .navbar-brand {
         font-size:30px;
@@ -207,37 +120,6 @@
       .header {
         color:#E0E0E0;
         font-size: 7vh;
-      }
-
-      .btn-upload {
-        width: 20vh;
-        height: 4rem;
-        font-size: 1.5rem;
-      }
-
-      .btn-send{
-        width:30vh;
-        font-size: 3rem;
-      }
-
-      input {
-        height: 7rem;
-      }
-      textarea {
-        height: 15rem;
-      }
-
-      .label-info{
-        font-size:1.5rem;
-      }
-
-      input:focus ~ label, textarea:focus ~ label,
-      input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
-        font-size: 1rem;
-      }
-
-      .form-control {
-        font-size: 1rem;
       }
     }
 
@@ -263,43 +145,54 @@
       section {
         margin-top:8vh;
       }
-
-      .btn-upload {
-        width: 30vh;
-        height: 6rem;
-        font-size: 3rem;
-      }
-
-      .btn-send{
-        margin-top:2rem;
-        width:30vh;
-        font-size: 4rem;
-      }
-
-      input {
-        height: 10rem;
-      }
-      textarea {
-        height: 20rem;
-      }
-
-      .label-info{
-        font-size:2rem;
-      }
-
-      input:focus ~ label, textarea:focus ~ label,
-      input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
-        font-size: 1.5rem;
-      }
-
-      .form-control {
-        height: 6rem;
-        font-size: 1rem;
-      }
     }
 
     html, body {
       overflow-x: hidden;
+    }
+
+    .lightbox-gallery {
+        background-image: linear-gradient(#4A148C, #E53935);
+        background-repeat: no-repeat;
+        color: #000;
+        overflow-x: hidden
+    }
+
+    .lightbox-gallery p {
+        color: #fff
+    }
+
+    .lightbox-gallery h2 {
+        font-weight: bold;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        color: #fff
+    }
+
+    @media (max-width:767px) {
+        .lightbox-gallery h2 {
+            margin-bottom: 25px;
+            padding-top: 25px;
+            font-size: 24px
+        }
+    }
+
+    .lightbox-gallery .intro {
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 40px
+    }
+
+    .lightbox-gallery .intro p {
+        margin-bottom: 0
+    }
+
+    .lightbox-gallery .photos {
+        padding-bottom: 20px
+    }
+
+    .lightbox-gallery .item {
+        padding-bottom: 30px
     }
   </style>
 
@@ -366,6 +259,33 @@
 
     </div>
   </header>
+
+<div class="lightbox-gallery">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Lightbox Gallery</h2>
+            <p class="text-center">Find the lightbox gallery for your project. click on any image to open gallary</p>
+        </div>
+        <div class="row photos">
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+        </div>
+    </div>
+</div>
 
   <footer class="mt-5">
     <div class="сontainer bottom" style="background:rgb(13,13,13)">
