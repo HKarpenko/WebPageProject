@@ -13,6 +13,9 @@
       }
     }
 
+    .fade-500 {
+      opacity: 1;
+    }
 
     .masthead {
       position: relative;
@@ -85,10 +88,6 @@
 
     .navbar-custom {
       background-color: rgba(0,0,0,0.5);
-    }
-
-    .fade-500 {
-      opacity: 1;
     }
 
     .btn-main {

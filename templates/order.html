@@ -2,6 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=500px, maximum-scale=1.0" />
     <title>
         Order
     </title>
@@ -10,9 +12,30 @@
 
     <script type="text/javascript" src="../static/js/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../static/js/script.js"></script>
 </head>
 
 <style>
+  .fade-once-1 {
+        opacity: 0;
+        animation: fadeImg 1s ease-in-out forwards;
+        animation-delay: 0.5s;
+    }
+
+  @keyframes fadeImg {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fade-500 {
+    opacity: 1;
+  }
+
   body {
     background: rgb(22,22,22)
   }
@@ -84,7 +107,8 @@
     background-color: rgba(0,0,0,0.5);
   }
 
-  input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+  input:focus ~ label, textarea:focus ~ label,
+  input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
       font-size: 0.75em;
       top: -5px;
       -webkit-transition: all 0.225s ease;
@@ -139,6 +163,11 @@
     color: #BDBDBD;
   }
 
+  .fileUpload{
+    width: 30vh;
+    height: 4rem;
+  }
+
   .btn-upload {
     width: 30vh;
     height: 4rem;
@@ -159,25 +188,22 @@
   .form-control {
     height: 4rem;
     font-family: "Roboto", sans-serif;
-    font-size: 1.5
-    rem;
+    font-size: 1.5rem;
     color:#BDBDBD;
     background-color:  rgb(40,40,40)!important;
     border: none;
     margin-right: 1rem;
   }
 
-  .fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
+  .upload {
+    width: 30vh;
+    height: 4rem;
     font-size: 20px;
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
   }
+
 
   @media (max-width: 768px) {
     .navbar-brand {
@@ -187,6 +213,98 @@
       font-size: 3rem;
       line-height: 3rem;
     }
+    .header {
+      color:#E0E0E0;
+      font-size: 7vh;
+    }
+
+    .btn-upload {
+      width: 20vh;
+      height: 4rem;
+      font-size: 1.5rem;
+    }
+
+    .btn-send{
+      width:30vh;
+      font-size: 3rem;
+    }
+
+    input {
+      height: 7rem;
+    }
+    textarea {
+      height: 15rem;
+    }
+
+    .label-info{
+      font-size:1.5rem;
+    }
+
+    input:focus ~ label, textarea:focus ~ label,
+    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
+      font-size: 1rem;
+    }
+
+    .form-control {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .navbar-brand {
+      font-size:40px;
+    }
+    .nav-link {
+      font-size:40px;
+    }
+    .btn-main {
+      width:35vh;
+      font-size:35px;
+    }
+    .btn-mini{
+      width:10vh;
+      height:5vh;
+      font-size:30px;
+    }
+    .header {
+      font-size: 5rem;
+    }
+    section {
+      margin-top:8vh;
+    }
+
+    .btn-upload {
+      width: 30vh;
+      height: 6rem;
+      font-size: 3rem;
+    }
+
+    .btn-send{
+      margin-top:2rem;
+      width:30vh;
+      font-size: 4rem;
+    }
+
+    input {
+      height: 10rem;
+    }
+    textarea {
+      height: 20rem;
+    }
+
+    .label-info{
+      font-size:2rem;
+    }
+
+    input:focus ~ label, textarea:focus ~ label,
+    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
+      font-size: 1.5rem;
+    }
+
+    .form-control {
+      height: 6rem;
+      font-size: 1rem;
+    }
   }
 
   html, body {
@@ -194,67 +312,51 @@
   }
 </style>
 
-<script>
-  $(document).on('change','.up', function(){
-    var names = [];
-    var files = $(this).get(0).files;
-    for (var i = 0; i < files.length; ++i) {
-      names.push(files[i].name);
-    }
-    if(files.length > 2){
-      var fileName = names.join(', ');
-      $(this).closest('.input-group').find('.form-control').attr("value", files.length+" files selected");
-    }
-    else{
-      $(this).closest('.input-group').find('.form-control').attr("value", names);
-    }
- });
-</script>
 <body>
   <header>
-    <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-dark py-4 py-xl-1">
+    <nav class="navbar navbar-custom fixed-top navbar-expand-xl navbar-dark py-4 py-xl-1">
       <div class="container-fluid">
-      <a class="navbar-brand" href="#" >Veronique</a>
+        <a class="navbar-brand" href="/" >Veronique</a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarLinksLeft,#NavbarLinksRight">
-        <span class="navbar-toggler-icon" style="width:70px;height:70px;"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarLinksLeft,#NavbarLinksRight">
+          <span class="navbar-toggler-icon" style="width:70px;height:70px;"></span>
+        </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="NavbarLinksRight">
+        <div class="collapse navbar-collapse justify-content-end" id="NavbarLinksRight">
 
-        <ul class="navbar-nav mr-5">
-          <li class="nav-item h5 my-2 mx-2">
-            <a class="nav-link" href="#">Strona Główna</a>
-          </li>
+          <ul class="navbar-nav mr-5">
+            <li class="nav-item h5 my-2 mx-2">
+              <a class="nav-link" href="/">Strona Główna</a>
+            </li>
 
-          <li class="nav-item h5 my-2 mx-2">
-            <a class="nav-link" href="#">O nas</a>
-          </li>
+            <li class="nav-item h5 my-2 mx-2">
+              <a class="nav-link" href="#">O nas</a>
+            </li>
 
-          <li class="nav-item h5 my-2 mx-2">
-            <a class="nav-link" href="#">Galeria</a>
-          </li>
+            <li class="nav-item h5 my-2 mx-2">
+              <a class="nav-link" href="/gallery">Galeria</a>
+            </li>
 
-          <li class="nav-item h5 my-2 mx-2">
-            <a class="nav-link" href="#">Kontakt</a>
-          </li>
-        </ul>
+            <li class="nav-item h5 my-2 mx-2">
+              <a class="nav-link" href="#">Kontakt</a>
+            </li>
+          </ul>
 
-        <ul class="navbar-nav ml-5">
-          <li class="nav-item h4 mt-2 mx-1">
-            <a class="nav-link waves-effect waves-light" href="https://www.instagram.com/veronique_tattoo/">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
+          <ul class="navbar-nav ml-5">
+            <li class="nav-item h4 mt-2 mx-1">
+              <a class="nav-link waves-effect waves-light" href="https://www.instagram.com/veronique_tattoo/">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
 
-          <li class="nav-item h4 mt-2 mx-1">
-            <a class="nav-link waves-effect waves-light" href="https://www.facebook.com/VeroniqueTattoo">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-        </ul>
+            <li class="nav-item h4 mt-2 mx-1">
+              <a class="nav-link waves-effect waves-light" href="https://www.facebook.com/VeroniqueTattoo">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
 
-      </div>
+        </div>
       </div>
     </nav>
 
@@ -275,38 +377,39 @@
 
   <section class="container">
     <div class="row fade-500 justify-content-center text-center mb-5" >
-      <h1 class="header">Wypełnij Formularz</h1>
+      <h1 class="header">Formularz kontaktowy</h1>
       <hr style="color:#E0E0E0; width:50%">
     </div>
-    <form method="post">
-      <div class="row fade-500 justify-content-center text-center mb-5" >
+    <form method="post" class="fade-500">
+
+      <div class="row justify-content-center text-center mb-5" >
         <!-- Name input -->
-        <div class="col-md-12 py-2">
+        <div class="col-xs-12 py-2">
           <div class="styled-input wide">
-            <input id="Name" type="text" required />
-            <label for="Name" >Imię</label>
+            <input class="inp" id="Name" type="text" required />
+            <label class="label-info" for="Name" >Imię</label>
           </div>
         </div>
 
         <!-- Email input -->
-        <div class="col-md-6 col-sm-12 py-2">
+        <div class="col-xl-6 col-sm-12 py-2">
           <div class="styled-input wide">
-            <input id="Email" type="email" required />
-            <label for="Email">Email</label>
+            <input class="inp" id="Email" type="email"/>
+            <label class="label-info" for="Email">Email</label>
           </div>
         </div>
 
-        <div class="col-md-6 col-sm-12 py-2">
+        <div class="col-xl-6 col-sm-12 py-2">
           <div class="styled-input wide">
-            <input id="Tel" type="text" required />
-            <label for="Tel" >Telefon</label>
+            <input class="inp" id="Tel" type="text" required />
+            <label class="label-info" for="Tel" >Telefon</label>
           </div>
         </div>
 
         <div class="col-xs-12 py-2">
           <div class="styled-input wide">
-            <input id="Tattoo" type="text" list="colorsList" required />
-            <label for="Tattoo" >Wybierz typ</label>
+            <input class="inp" id="Tattoo" type="text" list="colorsList" required />
+            <label class="label-info" for="Tattoo" >Wybierz typ</label>
             <datalist id="colorsList">
               <option value="Dotwork"><br>
               <option value="Szkic"><br>
@@ -319,25 +422,25 @@
         <!-- Message input -->
         <div class="col-xs-12 py-2">
           <div class="styled-input wide">
-            <textarea required></textarea>
-            <label>Message</label>
+            <textarea class="inp" ></textarea>
+            <label class="label-info" >Message</label>
           </div>
         </div>
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" readonly>
-          <div class="row" style="height:5rem;">
-            <span class="fileUpload btn-upload mx-3">
-              <span class="upl" id="upload">Dodaj plik</span>
-              <input type="file" class="upload up" id="up" onchange="readURL(this);" multiple/>
+            <span class="fileUpload mx-3">
+              <label for="up" class="btn-upload">Dodaj plik</label>
+              <input type="file" class="upload up" id="up" style="visibility:hidden;" multiple/>
             </span>
-          </div><!-- btn -->
         </div><!-- group -->
 
-        <div style="text-align: center;">
+        <div class="text-center">
           <button type="submit" class="btn-send">Wyślij</button>
         </div>
+
       </div>
+
     </form>
   </section>
 
@@ -356,7 +459,7 @@
         </div>
 
         <div class="col-md-3 col-sm-12 col-sm-4 h4 mx-4">
-          <a class="fb fa-lg text-light" style="text-decoration: none;" href="#">Veronique</a>
+          <a class="fb fa-lg text-light" style="text-decoration: none;" href="/">Veronique</a>
         </div>
 
         <div class="col-md-3 col-sm-12 h4 mx-4 mt-4" style="color: #BDBDBD;">

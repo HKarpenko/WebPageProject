@@ -15,6 +15,10 @@ def start():
 def order():
     return render_template("order.html")
 
+@app.route('/gallery')
+def gallery():
+    return render_template("gallery.html")
+
 @app.route('/login', methods=["GET","POST"])
 def login():
     error = None

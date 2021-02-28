@@ -12,41 +12,16 @@
   <link rel="stylesheet" href="../static/css/style.css">
 
   <script type="text/javascript" src="../static/js/jquery.min.js"></script>
-
   <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
 
-  <script>
-    $(window).on("load",function() {
-
-      $(window).scroll(function() {
-        var windowTop = $(this).scrollTop();
-        var windowBottom = $(this).scrollTop() + $(this).innerHeight(); //current screen bottom border
-
-        $(".fade-500").each(function() {
-          var objectTop= $(this).offset().top;
-          var margin = 100;
-          if (objectTop + margin < windowBottom) {
-            if ($(this).css("opacity")==0) {
-              $(this).fadeTo(500,1);
-            }
-          }
-          else {
-            if ($(this).css("opacity")==1) {
-              $(this).fadeTo(500,0);
-            }
-          }
-        });
-      }).scroll();
-
-    });
-  </script>
+  <script type="text/javascript" src="../static/js/script.js"></script>
 
 </head>
 <body>
   <header>
     <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-dark py-4 py-xl-1">
       <div class="container-fluid">
-          <a class="navbar-brand" href="#">Veronique</a>
+          <a class="navbar-brand" href="/">Veronique</a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarLinksLeft,#NavbarLinksRight">
             <span class="navbar-toggler-icon" style="width:70px;height:70px;"></span>
@@ -56,7 +31,7 @@
 
             <ul class="navbar-nav mr-5">
               <li class="nav-item h5 my-2 mx-2">
-                <a class="nav-link" href="#">Strona Główna</a>
+                <a class="nav-link" href="/">Strona Główna</a>
               </li>
 
               <li class="nav-item h5 my-2 mx-2">
@@ -64,7 +39,7 @@
               </li>
 
               <li class="nav-item h5 my-2 mx-2">
-                <a class="nav-link" href="#">Galeria</a>
+                <a class="nav-link" href="/gallery">Galeria</a>
               </li>
 
               <li class="nav-item h5 my-2 mx-2">
@@ -100,7 +75,7 @@
         <h1 class="h1-grad mx-auto my-0 text-uppercase">Tattoo Veronique</h1>
 
         <div style="text-align: center; margin-top:15vh;">
-          <button type="button" class="btn-main"  onclick="document.location.href='order'">
+          <button type="button" class="btn-main" onclick="document.location.href='order'">
             Złożyć zamówienie
           </button>
         </div>
@@ -157,7 +132,9 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Cienkie tatuaże</h2>
             <div class="d-flex flex-row-reverse">
-              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;" onclick="document.location.href='order'">
+                Zamówić
+              </button>
             </div>
           </div>
 
@@ -172,7 +149,9 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Micro pigmentacija</h2>
             <div class="d-flex flex-row-reverse">
-              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;" onclick="document.location.href='order'">
+                Zamówić
+              </button>
             </div>
           </div>
         </div>
@@ -186,7 +165,9 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Dotwork</h2>
             <div class="d-flex flex-row-reverse">
-              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;" onclick="document.location.href='order'">
+                Zamówić
+              </button>
             </div>
           </div>
         </div>
@@ -200,7 +181,9 @@
           <div class="details">
             <h2 style="margin-bottom:2vh;">Indywidualne szkice</h2>
             <div class="d-flex flex-row-reverse">
-              <button type="button" class="btn-mini" style="color:#BDBDBD;">Zamówić</button>
+              <button type="button" class="btn-mini" style="color:#BDBDBD;" onclick="document.location.href='order'">
+                Zamówić
+              </button>
             </div>
           </div>
         </div>
@@ -227,7 +210,7 @@
       </div>
       <!-- ... Button -->
       <div class="col-xl-4 mt-5 my-xl-2 zoom">
-        <button type="button" class="btn-gallery">...</button>
+        <button type="button" class="btn-gallery" onclick="document.location.href='gallery'">...</button>
       </div>
 
     </div>
@@ -279,7 +262,7 @@
         </div>
 
         <div class="col-md-3 col-sm-12 col-sm-4 h4 mx-4">
-          <a class="fb fa-lg text-light" style="text-decoration: none;" href="#">Veronique</a>
+          <a class="fb fa-lg text-light" style="text-decoration: none;" href="/">Veronique</a>
         </div>
 
         <div class="col-md-3 col-sm-12 h4 mx-4 mt-4" style="color: #BDBDBD;">
