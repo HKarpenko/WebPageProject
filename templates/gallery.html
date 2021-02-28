@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-
     <script type="text/javascript" src="../static/js/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
 
     <script type="text/javascript" src="../static/js/script.js"></script>
     <style>
@@ -147,53 +146,29 @@
       }
     }
 
+    .photo-gallery {
+    }
+
+    .photo-gallery .intro {
+      font-size:16px;
+      max-width:500px;
+      margin:0 auto 40px;
+    }
+
+
+    .photo-gallery .photos {
+      padding-bottom:20px;
+    }
+
+    .photo-gallery .item {
+      padding-bottom:30px;
+    }
+
+
     html, body {
       overflow-x: hidden;
     }
 
-    .lightbox-gallery {
-        background-image: linear-gradient(#4A148C, #E53935);
-        background-repeat: no-repeat;
-        color: #000;
-        overflow-x: hidden
-    }
-
-    .lightbox-gallery p {
-        color: #fff
-    }
-
-    .lightbox-gallery h2 {
-        font-weight: bold;
-        margin-bottom: 40px;
-        padding-top: 40px;
-        color: #fff
-    }
-
-    @media (max-width:767px) {
-        .lightbox-gallery h2 {
-            margin-bottom: 25px;
-            padding-top: 25px;
-            font-size: 24px
-        }
-    }
-
-    .lightbox-gallery .intro {
-        font-size: 16px;
-        max-width: 500px;
-        margin: 0 auto 40px
-    }
-
-    .lightbox-gallery .intro p {
-        margin-bottom: 0
-    }
-
-    .lightbox-gallery .photos {
-        padding-bottom: 20px
-    }
-
-    .lightbox-gallery .item {
-        padding-bottom: 30px
-    }
   </style>
 
 </head>
@@ -260,32 +235,57 @@
     </div>
   </header>
 
-<div class="lightbox-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">Lightbox Gallery</h2>
-            <p class="text-center">Find the lightbox gallery for your project. click on any image to open gallary</p>
-        </div>
-        <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190718/gallery/original/03_r_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/original/01_b_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/original/02_o_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-        </div>
+  <section class="photo-gallery container">
+
+    <div class="row fade-500 justify-content-center text-center mb-5" >
+      <h1 class="header">Tatuaże</h1>
+      <hr style="color:#E0E0E0; width:50%">
     </div>
-</div>
+
+    <div class="row photos">
+      <div class="row fade-500">
+          <div class="col-sm-6 col-md-4 col-lg-3 item">
+          <a href="../static/img/galery/eskiz.jpg" data-lightbox="photos">
+             <img class="img-fluid" src="../static/img/galery/eskiz.jpg">
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+             <img class="img-fluid" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 item">
+          <a href="../static/img/galery/eskiz.jpg" data-lightbox="photos">
+            <img class="img-fluid" src="../static/img/galery/eskiz.jpg">
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+            <img class="img-fluid" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+      </div>
+
+      <div class="row fade-500">
+        <div class="col-sm-6 col-md-4 col-lg-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+            <img class="img-fluid" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+            <img class="img-fluid" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 
   <footer class="mt-5">
     <div class="сontainer bottom" style="background:rgb(13,13,13)">
@@ -315,6 +315,9 @@
       </div>
     </div>
   </footer>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/lightbox.min.js"></script>
 
 </body>
 </html>
