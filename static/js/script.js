@@ -1,7 +1,7 @@
 $(window).on("load",function() {
   $(window).scroll(function() {
     var windowTop = $(this).scrollTop();
-    var windowBottom = $(this).scrollTop() + $(this).innerHeight(); //current screen bottom border
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
 
     $(".fade-500").each(function() {
       var objectTop= $(this).offset().top;

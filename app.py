@@ -15,9 +15,13 @@ def start():
 def order():
     return render_template("order.html")
 
-@app.route('/gallery')
-def gallery():
-    return render_template("gallery.html")
+@app.route('/tattoos')
+def tattoos():
+    return render_template("tattoos.html")
+
+@app.route('/sketches')
+def sketches():
+    return render_template("sketches.html")
 
 @app.route('/login', methods=["GET","POST"])
 def login():

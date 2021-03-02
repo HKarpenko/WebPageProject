@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=500px, maximum-scale=1.0" />
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="../static/js/script.js"></script>
+
+    <style>
+    .drop-text{
+      color: #BDBDBD !important;
+    }
+
+    .drop-text:hover{
+      background: rgba(33,33,33,0.7) !important;
+      color: #eeeeee !important;
+    }
+
+    .dropdown-toggle{
+      color:#9e9e9e !important;
+    }
+
+    .dropdown-toggle:hover{
+      color:#BDBDBD  !important;
+    }
+
+    .dropdown-menu{
+      background-color: rgba(0,0,0,0.5) !important;
+    }
+
+    .navbar-brand{
+      color:#BDBDBD;
+    }
+
+    .fix-but {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+      right: 1%;
+      bottom: 1%;
+      font-size:4rem;
+      color:#BDBDBD;
+      transition: font-size .5s, right .5s, bottom .5s;
+    }
+
+    .fix-but:hover{
+      color:#BDBDBD;
+    }
+
+    .fade-once-1 {
+      opacity: 0;
+      animation: fadeImg 1s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeImg {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .fade-500 {
+      opacity: 1;
+    }
+
+    @media (min-width: 1025px) {
+      .zoom {
+        transition: transform .5s; /* Animation */
+      }
+
+      .zoom:hover {
+        transform: scale(1.3);
+      }
+      .fix-but:hover{
+        right: 3%;
+        bottom: 4%;
+        color:#757575;
+        font-size: 5rem;
+      }
+    }
+
+    body {
+      background: rgb(22,22,22)
+    }
+
+    .fa-bott{
+      text-decoration: none;
+      color: #BDBDBD;
+    }
+
+    .fa-bott:hover{
+      color: #757575;
+    }
+
+    .header {
+      color:#E0E0E0;
+      font-size: 10vh;
+    }
+
+    section {
+      margin-top:15vh;
+    }
+
+    .h1-grad {
+      font-size: 5rem;
+      line-height: 5rem;
+      letter-spacing: 0.8rem;
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2));
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+              background-clip: text;
+    }
+
+    .masthead {
+      position: relative;
+      width: 100%;
+      height: 20rem;
+      padding: 15rem 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.9) 75%, rgb(22,22,22) 100%), url("../static/img/gallery.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: cover;
+    }
+
+    .btn-main {
+      width: 45vh;
+      height: 10vh;
+      font-size : 20px;
+      border-radius: 8px;
+      border-color: #9E9E9E;
+      transition: transform .5s;
+      background: rgba(0,0,0,0);
+      color: #828282;
+      text-align: center;
+      margin-top:5vh;
+    }
+
+    .btn-main:hover {
+      background: rgba(33,33,33,0.7);
+      transform: scale(1.2);
+      color: #BDBDBD;
+    }
+
+    @media (min-width: 400px) {
+      .masthead {
+        height: 120vh;
+        padding: 0;
+      }
+    }
+
+    .navbar-custom {
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 1024px) {
+      .h1-grad {
+        font-size: 6rem;
+        line-height: 6rem;
+        letter-spacing: 0.8rem;
+      }
+      .navbar-brand {
+        font-size:40px;
+      }
+      .drop-text{
+        font-size:30px !important;
+      }
+      .nav-link {
+        font-size:40px;
+      }
+      .btn-main {
+        width:35vh;
+        font-size:30px;
+      }
+      .btn-mini{
+        width:10vh;
+        height:5vh;
+        font-size:30px;
+      }
+      .header {
+        font-size: 5rem;
+      }
+      section {
+        margin-top:8vh;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .h1-grad {
+        font-size: 5rem;
+        line-height: 5rem;
+        letter-spacing: 0.8rem;
+      }
+      .navbar-brand {
+        font-size:30px;
+      }
+      .drop-text{
+        font-size:30px !important;
+      }
+
+      .h1-grad{
+        font-size: 3rem;
+        line-height: 3rem;
+      }
+      .header {
+        color:#E0E0E0;
+        font-size: 7vh;
+      }
+      .item {
+        margin-left: 0.8rem;
+      }
+    }
+
+    .photo-gallery {
+    }
+
+    .photo-gallery .intro {
+      font-size:16px;
+      max-width:500px;
+      margin:0 auto 40px;
+    }
+
+
+    .photo-gallery .photos {
+      padding-bottom:20px;
+    }
+
+    .photo-gallery .item {
+      padding-bottom:30px;
+    }
+
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-custom fixed-top navbar-expand-xl navbar-dark py-4 py-xl-1">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="/">Veronique</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarLinksLeft,#NavbarLinksRight">
+            <span class="navbar-toggler-icon" style="width:50px;height:50px;"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="NavbarLinksRight">
+
+            <ul class="navbar-nav mr-5">
+              <li class="nav-item h5 my-2 mx-2">
+                <a class="nav-link" href="/">Strona Główna</a>
+              </li>
+
+              <li class="nav-item h5 my-2 mx-2">
+                <a class="nav-link" href="#">O nas</a>
+              </li>
+
+              <li class="nav-item dropdown h5 my-2 mx-2" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Galeria
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item drop-text" href="/tattoos">
+                    Tatuaże
+                  </a>
+                  <a class="dropdown-item drop-text" href="/sketches">
+                    Szkice
+                  </a>
+                </div>
+              </li>
+
+              <li class="nav-item h5 my-2 mx-2">
+                <a class="nav-link" href="#">Kontakt</a>
+              </li>
+            </ul>
+
+            <ul class="navbar-nav ml-5">
+              <li class="nav-item h4 mt-2 mx-1">
+                <a class="nav-link waves-effect waves-light" href="https://www.instagram.com/veronique_tattoo/">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+
+              <li class="nav-item h4 mt-2 mx-1">
+                <a class="nav-link waves-effect waves-light" href="https://www.facebook.com/VeroniqueTattoo">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <header class="container-fluid masthead fade-once-1 galeria">
+    <div class="d-flex h-100 align-items-center">
+
+      <div class="mx-auto text-center">
+
+        <h1 class="h1-grad mx-auto my-0 text-uppercase">Szkice</h1>
+
+      </div>
+
+    </div>
+  </header>
+
+  <a class="fix-but fade-once-1" href="/order">
+    <i class="bi bi-chat-right-dots-fill but-cont"></i>
+  </a>
+
+  <section class="photo-gallery container">
+
+    <div class="row fade-500 justify-content-center text-center mb-5" >
+
+      <h1 class="header">Galeria</h1>
+      <hr style="color:#E0E0E0; width:50%">
+      <div>
+        <button type="button" class="btn-main" onclick="document.location.href='tattoos'">
+          Zobacz tatuaże
+        </button>
+      </div>
+
+    </div>
+
+    <div class="row photos">
+      <div class="row fade-500">
+          <div class="col-lg-6 col-xl-3 item">
+          <a href="../static/img/galery/eskiz.jpg" data-lightbox="photos">
+             <img class="img-fluid zoom" src="../static/img/galery/eskiz.jpg">
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-xl-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+             <img class="img-fluid zoom" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-xl-3 item">
+          <a href="../static/img/galery/eskiz.jpg" data-lightbox="photos">
+            <img class="img-fluid zoom" src="../static/img/galery/eskiz.jpg">
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-xl-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+            <img class="img-fluid zoom" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+      </div>
+
+      <div class="row fade-500">
+        <div class="col-lg-6 col-xl-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+            <img class="img-fluid zoom" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-xl-3 item">
+          <a href="../static/img/galery/tattooDot.jpg" data-lightbox="photos">
+            <img class="img-fluid zoom" src="../static/img/galery/tattooDot.jpg">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="mt-5">
+    <div class="сontainer bottom" style="background:rgb(13,13,13)">
+      <div class="row align-items-center justify-content-center text-center">
+
+        <div class="col-md-3 col-sm-12 col-sm-4 mx-4 my-4">
+          <a class="mx-3 fa-bott" href="https://www.instagram.com/veronique_tattoo/">
+            <i class="fab fa-instagram fa-3x"></i>
+          </a>
+
+          <a class="mx-3 fa-bott" href="https://www.facebook.com/VeroniqueTattoo">
+            <i class="fab fa-facebook fa-3x"></i>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-12 col-sm-4 h4 mx-4">
+          <a class="fb fa-lg text-light" style="text-decoration: none;" href="/">Veronique</a>
+        </div>
+
+        <div class="col-md-3 col-sm-12 h4 mx-4 mt-4" style="color: #BDBDBD;">
+          <p>al. Kochanowskiego 22B</p>
+          <p>51-602 Wrocław</p>
+          <p>tel: 318 191 251</p>
+          <p>tel: 22 422 05 36</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/lightbox.min.js"></script>
+
+</body>
+</html>
