@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request, flash
+from flask import Flask, render_template, redirect, request, flash
 from werkzeug.utils import secure_filename
 
 import telebot
