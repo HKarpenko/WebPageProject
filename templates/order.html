@@ -17,6 +17,31 @@
 </head>
 
 <style>
+  .drop-text{
+    color: #BDBDBD !important;
+  }
+
+  .drop-text:hover{
+    background: rgba(33,33,33,0.7) !important;
+    color: #eeeeee !important;
+  }
+
+  .dropdown-toggle{
+    color:#9e9e9e !important;
+  }
+
+  .dropdown-toggle:hover{
+    color:#BDBDBD  !important;
+  }
+
+  .dropdown-menu{
+    background-color: rgba(0,0,0,0.5) !important;
+  }
+
+  .navbar-brand{
+    color:#BDBDBD;
+  }
+
   .fade-once-1 {
         opacity: 0;
         animation: fadeImg 1s ease-in-out forwards;
@@ -78,6 +103,10 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+  }
+
+  .dropdown-menu{
+    background-color: rgba(0,0,0,0.5);
   }
 
   @media (min-width: 992px) {
@@ -214,6 +243,9 @@
     .navbar-brand {
       font-size:40px;
     }
+    .drop-text{
+      font-size:30px !important;
+    }
     .nav-link {
       font-size:40px;
     }
@@ -271,6 +303,9 @@
   @media (max-width: 768px) {
     .navbar-brand {
       font-size:30px;
+    }
+    .drop-text{
+      font-size:23px !important;
     }
     .h1-grad{
       font-size: 3rem;
@@ -343,7 +378,7 @@
         <a class="navbar-brand" href="/" >Veronique</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarLinksLeft,#NavbarLinksRight">
-          <span class="navbar-toggler-icon" style="width:70px;height:70px;"></span>
+          <span class="navbar-toggler-icon" style="width:50px;height:50px;"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="NavbarLinksRight">
@@ -357,8 +392,20 @@
               <a class="nav-link" href="/about">O nas</a>
             </li>
 
-            <li class="nav-item h5 my-2 mx-2">
-              <a class="nav-link" href="/gallery">Galeria</a>
+            <li class="nav-item dropdown h5 my-2 mx-2" >
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Galeria
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item drop-text" href="/tattoos">
+                  Tatuaże
+                </a>
+                <a class="dropdown-item drop-text" href="/sketches">
+                  Szkice
+                </a>
+              </div>
             </li>
 
             <li class="nav-item h5 my-2 mx-2">
