@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=500px, maximum-scale=1.0" />
     <title>
-        Order
+        Zamówienie
     </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
@@ -136,8 +136,8 @@
     background-color: rgba(0,0,0,0.5);
   }
 
-  input:focus ~ label, textarea:focus ~ label,
-  input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
+  .hint:focus ~ label,
+  .hint[data-value]:not([data-value=""]) ~ label {
       font-size: 0.75em;
       top: -5px;
       -webkit-transition: all 0.225s ease;
@@ -169,6 +169,11 @@
       background: rgb(40,40,40);
       border-radius: 4px;
       color:#BDBDBD;
+  }
+
+  .tel ~ label{
+    font-size: 0.75em;
+    top: -5px;
   }
 
   textarea {
@@ -283,8 +288,8 @@
       font-size:2rem;
     }
 
-    input:focus ~ label, textarea:focus ~ label,
-    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
+    .hint:focus ~ label,
+    .hint[data-value]:not([data-value=""]) ~ label {
       font-size: 1.5rem;
     }
 
@@ -319,7 +324,7 @@
     .btn-upload {
       width: 22vh;
       height: 4rem;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     .btn-send{
@@ -338,8 +343,8 @@
       font-size:1.5rem;
     }
 
-    input:focus ~ label, textarea:focus ~ label,
-    input[data-value]:not([data-value=""]) ~ label, textarea[data-value]:not([data-value=""]) ~ label {
+    .hint:focus ~ label,
+    .hint[data-value]:not([data-value=""]) ~ label{
       font-size: 1rem;
     }
 
@@ -353,6 +358,18 @@
     overflow-x: hidden;
   }
 </style>
+
+<script>
+  $(window).on("load",function() {
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        alert("{{message}}");
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+  });
+</script>
 
 <body>
   <header>
@@ -372,7 +389,7 @@
             </li>
 
             <li class="nav-item h5 my-2 mx-2">
-              <a class="nav-link" href="#">O nas</a>
+              <a class="nav-link" href="/about">O nas</a>
             </li>
 
             <li class="nav-item dropdown h5 my-2 mx-2" >
@@ -434,13 +451,13 @@
       <h1 class="header">Formularz kontaktowy</h1>
       <hr style="color:#E0E0E0; width:50%">
     </div>
-    <form method="post" class="fade-500">
+    <form method="post" class="fade-500" enctype=multipart/form-data>
 
       <div class="row justify-content-center text-center mb-5" >
         <!-- Name input -->
         <div class="col-xs-12 py-2">
           <div class="styled-input wide">
-            <input class="inp" id="Name" type="text" required />
+            <input class="inp hint" id="Name" name="Name" type="text" required />
             <label class="label-info" for="Name" >Imię</label>
           </div>
         </div>
@@ -448,27 +465,28 @@
         <!-- Email input -->
         <div class="col-xl-6 col-sm-12 py-2">
           <div class="styled-input wide">
-            <input class="inp" id="Email" type="email"/>
+            <input class="inp hint" id="Email" name="Email" type="email"/>
             <label class="label-info" for="Email">Email</label>
           </div>
         </div>
 
         <div class="col-xl-6 col-sm-12 py-2">
           <div class="styled-input wide">
-            <input class="inp" id="Tel" type="text" required />
+            <input class="tel" id="Tel" name="Tel" type="text"
+                placeholder="np.: +48-123-456-789..." pattern="[+]{1}[0-9]{1-3}-[0-9]{3}-[0-9]{3}-[0-9]{3,6}">
             <label class="label-info" for="Tel" >Telefon</label>
           </div>
         </div>
 
         <div class="col-xs-12 py-2">
           <div class="styled-input wide">
-            <input class="inp" id="Tattoo" type="text" list="colorsList" required />
+            <input class="inp hint" id="Tattoo" name="Type" type="text" list="colorsList" required />
             <label class="label-info" for="Tattoo" >Wybierz typ</label>
             <datalist id="colorsList">
-              <option value="Dotwork"><br>
-              <option value="Szkic"><br>
-              <option value="Brwi permanentne"><br>
-              <option value="Inne"><br>
+              <option value="Dotwork">
+              <option value="Szkic">
+              <option value="Brwi permanentne">
+              <option value="Inne">
             </datalist>
           </div>
         </div>
@@ -476,7 +494,7 @@
         <!-- Message input -->
         <div class="col-xs-12 py-2">
           <div class="styled-input wide">
-            <textarea class="inp" ></textarea>
+            <textarea class="inp hint" name="Message"></textarea>
             <label class="label-info" >Message</label>
           </div>
         </div>
@@ -485,7 +503,8 @@
           <input type="text" class="form-control" readonly>
           <span class="fileUpload mx-3">
             <label for="up" class="btn-upload">Dodaj plik</label>
-            <input type="file" class="upload up" id="up" multiple/>
+            <input type="file" name="Files" class="upload up" id="up" multiple
+                accept="image/*,.pdf,.doc,.docx,.txt"/>
           </span>
         </div><!-- group -->
 
