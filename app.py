@@ -36,6 +36,7 @@ def hello():
 def order():
     return render_template("order.html")
 
+<<<<<<< HEAD
 @app.route('/order', methods=["POST"])
 def upload_order():
     if request.method == "POST":
@@ -62,6 +63,11 @@ def tattoos():
 @app.route('/sketches')
 def sketches():
     return render_template("sketches.html")
+=======
+@app.route('/gallery')
+def gallery():
+    return render_template("gallery.html")
+>>>>>>> parent of 05250e5 (separate gallery on tattoos and sketches and design it)
 
 @app.route('/about')
 def about():
