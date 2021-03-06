@@ -1,4 +1,5 @@
 import os
+import threading
 from flask import Flask, render_template, redirect, request, flash
 from werkzeug.utils import secure_filename
 
@@ -20,13 +21,22 @@ def send_welcome(message):
     bot.send_message(my_chat_id, "Hello")
 """
 
-def telegram_send(name="None",email="None",tel="None",order_type="None",order_message="None",files=None):
+async def telegram_send(name="None",email="None",tel="None",order_type="None",order_message="None",files=None):
     message = "Имя пользователя: "+str(name)+"\n"
     message += "Email: " + str(email) + "\n"
     message += "Номер телефона: " + str(tel) + "\n"
     message += "Тип заказа: " + str(order_type) + "\n"
     message += "Главное сообщение: " + str(order_message)
     bot.send_message(my_chat_id, message)
+    for file in files:
+        if file.filename != '':
+            filename = secure_filename(file.filename)
+            file_path = f"static/uploads/{filename}"
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            doc = open(file_path, 'rb')
+            bot.send_document(my_chat_id, doc)
+            doc.close()
+            os.remove(file_path)
 
 @app.route('/')
 def hello():
@@ -46,11 +56,8 @@ def upload_order():
             order_type = request.form["Type"]
             order_message = request.form["Message"]
             files = request.files.getlist("Files")
-            for file in files:
-                if file.filename != '':
-                    filename = secure_filename(file.filename)
-                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            telegram_send(name=name, tel=tel, email=email, order_type=order_type, order_message=order_message,files=files)
+            telegram_send(name=name, tel=tel, email=email, order_type=order_type, order_message=order_message,
+                          files=files)
             flash('Message were successfully sended')
     return redirect(request.url)
 
