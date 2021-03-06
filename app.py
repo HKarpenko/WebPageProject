@@ -1,5 +1,4 @@
 import os
-import threading
 from flask import Flask, render_template, redirect, request, flash
 from werkzeug.utils import secure_filename
 
@@ -21,7 +20,7 @@ def send_welcome(message):
     bot.send_message(my_chat_id, "Hello")
 """
 
-async def telegram_send(name="None",email="None",tel="None",order_type="None",order_message="None",files=None):
+def telegram_send(name="None",email="None",tel="None",order_type="None",order_message="None",files=None):
     message = "Имя пользователя: "+str(name)+"\n"
     message += "Email: " + str(email) + "\n"
     message += "Номер телефона: " + str(tel) + "\n"
