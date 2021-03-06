@@ -2,7 +2,9 @@ import os
 from flask import Flask, render_template, redirect, request, flash
 from werkzeug.utils import secure_filename
 
+import telebot
 
+bot = telebot.TeleBot(token='1644959765:AAEn325HJiB-JFsMA5D2RqZoT3LBmoC1ZZg')
 my_chat_id = 510305747
 
 UPLOAD_FOLDER = 'static/uploads'
@@ -18,6 +20,13 @@ def send_welcome(message):
     bot.send_message(my_chat_id, "Hello")
 """
 
+def telegram_send(name="None",email="None",tel="None",order_type="None",order_message="None",files=None):
+    message = "Имя пользователя: "+str(name)+"\n"
+    message += "Email: " + str(email) + "\n"
+    message += "Номер телефона: " + str(tel) + "\n"
+    message += "Тип заказа: " + str(order_type) + "\n"
+    message += "Главное сообщение: " + str(order_message)
+    bot.send_message(my_chat_id, message)
 
 @app.route('/')
 def hello():
