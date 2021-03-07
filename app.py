@@ -1,4 +1,5 @@
 import os
+import tempfile
 from flask import Flask, render_template, redirect, request, flash
 from werkzeug.utils import secure_filename
 
@@ -27,15 +28,14 @@ def telegram_send(name="None",email="None",tel="None",order_type="None",order_me
     message += "Тип заказа: " + str(order_type) + "\n"
     message += "Главное сообщение: " + str(order_message)
     bot.send_message(my_chat_id, message)
+    tempdirectory = tempfile.gettempdir()
     for file in files:
         if file.filename != '':
             filename = secure_filename(file.filename)
-            file_path = f"static/uploads/{filename}"
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            doc = open(file_path, 'rb')
+            file.save(os.path.join(tempdirectory, filename))
+            doc = open(os.path.join(tempdirectory, filename), 'rb')
             bot.send_document(my_chat_id, doc)
             doc.close()
-            os.remove(file_path)
 
 @app.route('/')
 def hello():
