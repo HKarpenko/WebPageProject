@@ -2,7 +2,6 @@ import os
 import tempfile
 from flask import Flask, render_template, redirect, request, flash
 from werkzeug.utils import secure_filename
-from celery import Celery
 
 import telebot
 
